@@ -2,27 +2,19 @@ plugins {
     id 'com.android.library'
 }
 android {
-    compileSdk 32
+    compileSdkVersion 28
+    buildToolsVersion '27.0.3'
+    resourcePrefix "__utils_"
 
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
     defaultConfig {
-        minSdk 31
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion 14
+        targetSdkVersion 28
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    lintOptions {
+        abortOnError false
     }
 }
 
